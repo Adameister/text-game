@@ -1,3 +1,11 @@
+/*
+ * This file contains the main driver for the text game.
+ * The game should be cross platform and compiled with the GCC/G++ compiler.
+ * This program was coded by: Adam Hudson
+ * 
+ * Date: Feb 6th, 2017
+ */
+
 #include <iostream>
 #include <string>
 #include <sstream>
