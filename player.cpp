@@ -1,9 +1,14 @@
 #include <iostream>
+#include <string>
 #include "player.h"
 
 using namespace std;
 
-void Player::foo(){
+void Player::createPlayer( string name ){
 	// TODO: stuff
-	cout << "yay!\n";
+	playerName = name;
+}
+
+string Player::getPlayerName( void ){
+    return playerName;
 }
