@@ -1,5 +1,10 @@
 class Player{
 public:
-	void foo();
-	int bar;
+
+	void createPlayer( std::string name );
+	std::string getPlayerName( void );
+
+private:
+
+    std::string playerName;
 };
