@@ -31,9 +31,10 @@ int checkInterrupt( string uInput );
 
 int main(){
 
+  // declare new Player object called player
   Player player;
 
-  string uInput;
+  string uInput;  // holds the input from the user from each iteration of the game's main loop
   string location = "dungeon";
 
   cout << "Welcome to TextAdventure!\n";
@@ -67,11 +68,20 @@ void cmd( string uInput ){
 }
 
 int checkInterrupt( string uInput ){
-
+  // This line of code will allow players to exit the game with accidental spaces
+  // before or after the exit command
   uInput.erase( remove_if( uInput.begin(), uInput.end(), ::isspace), uInput.end() );
 
   if( uInput.compare("exit") == 0 ){
     return 0;
+  }
+  
+  if( uInput.compare("quit") == 0 ){
+    return 0;
+  }
+  
+  if( uInput.compare("help") == 0 ){
+    // TODO: Display help information/help menu
   }
 
   // if there was no interrupt, then keep the game running
