@@ -25,8 +25,8 @@
 
 using namespace std;
 
+// Functions list
 void cmd( string uInput );
-
 int checkInterrupt( string uInput );
 
 int main(){
@@ -81,7 +81,11 @@ int checkInterrupt( string uInput ){
   }
   
   if( uInput.compare("help") == 0 ){
-    // TODO: Display help information/help menu
+    cout << "Commands:" << endl;
+    cout << "'exit' or 'quit' to exit the game." << endl;
+    cout << "'pick up [item]' to pick up the desired item." << endl;
+    cout << "'look' to observe the environment around you." << endl;
+    cout << "'n' 's' 'e' 'w' to walk north, south, east, and west respectively." << endl;
   }
 
   // if there was no interrupt, then keep the game running
