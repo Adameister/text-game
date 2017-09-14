@@ -22,6 +22,7 @@
 
 // Including other files
 #include "player.h"
+#include "map.h"
 
 using namespace std;
 
@@ -31,11 +32,12 @@ int checkInterrupt( string uInput );
 
 int main(){
 
+  // Init the new map
+  Map map;
   // declare new Player object called player
   Player player;
 
   string uInput;  // holds the input from the user from each iteration of the game's main loop
-  string location = "dungeon";
 
   cout << "Welcome to TextAdventure!\n";
   cout << "Please enter a name for your charater: ";
@@ -50,7 +52,8 @@ int main(){
   int running = 1;
 
   while( running ){
-    cout << player.getPlayerName() << "@" << location << ">";
+    // Displayed everytime the program waits for user input.
+    cout << player.getPlayerName() << "@" << player.getPlayerLocation() << ">";
     getline(cin, uInput);
 
     running = checkInterrupt( uInput );
