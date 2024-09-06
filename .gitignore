@@ -5,7 +5,9 @@
 *.so
 *.dll
 *.exe
+*.ilk
 *.out
+*.pdb
 *.dSYM/
 
 # Build directories

@@ -7,13 +7,13 @@ Adventure Knight is a text based terminal game based in C++.
   2. Objects
 
 ## Requirements
-Ojbect Oriented Code
+Object Oriented Code
   - I originally wanted the game to be programmed normally, but then decided I wanted this game to be Object-Oriented.
 How should the code break down into objects?
-  - Need to separate interfaces and implimentation.
+  - Need to separate interfaces and implementation.
 
 ## Objects
 Objects needed
   1. Player
   2. Objects for each room
-    - Castle Gate (Starting Room)
+      - Castle Gate (Starting Room)
