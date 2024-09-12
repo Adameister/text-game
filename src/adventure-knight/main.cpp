@@ -15,20 +15,19 @@
  *
  */
 
-// Including libraries
 #include <iostream>
 #include <string>
 #include <algorithm>
 
-// Including other files
 #include "adventure-knight/player.hpp"
-#include "adventure-knight/map.hpp"
 
-//using namespace std ;
+////////////////////////////////////////////////////////////////////////////////
 
 // Functions list
 void cmd( std::string uInput ) ;
 int checkInterrupt( std::string uInput ) ;
+
+////////////////////////////////////////////////////////////////////////////////
 
 int main( int argc, char** argv )
 {
@@ -39,10 +38,12 @@ int main( int argc, char** argv )
     }
     std::cout << "End of parameters." << std::endl ;
 
+    // FIXME - Decide how to handle the main map.
     // Init the new map
-    Map map ;
+    //Map map ;
+
     // declare new Player object called player
-    Player player ;
+    Player* player ;
 
     std::string uInput ;  // holds the input from the user from each iteration of the game's main loop
 
@@ -50,7 +51,7 @@ int main( int argc, char** argv )
     std::cout << "Please enter a name for your charater: " ;
     std::getline( std::cin, uInput ) ;
 
-    player.createPlayer( uInput ) ;
+    //player.createPlayer( uInput ) ;
 
     std::cout << "\nThis game involves using one's surrounding to help in the completion of this game.\n" ;
     std::cout << "To display the help menu, enter: >help \n" ;
@@ -61,7 +62,13 @@ int main( int argc, char** argv )
     while( running )
     {
         // Displayed every time the program waits for user input.
-        std::cout << player.getPlayerName() << "@" << player.getPlayerLocation() << ">" ;
+        // The difference between player.getPlayerName() and player->getPlayerName()
+        //      lies in how you access the member function of getPlayerName() of the Player class
+        //      Pointer Access (player->getPlayerName())
+        //          Used when player is a pointer to an object.
+        //      Object Access (player.getPlayerName())
+        //          Used when player is an instance or reference of an object
+        std::cout << player->getEntityName() << "@" << player->getPlayerLocation() << ">" ;
         std::getline( std::cin, uInput ) ;
 
         running = checkInterrupt( uInput ) ;
@@ -73,11 +80,15 @@ int main( int argc, char** argv )
     return 0 ;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 void cmd( std::string uInput )
 {
     // debugging output for the input
     //cout << "#" << uInput << "#" ;
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 int checkInterrupt( std::string uInput )
 {
@@ -107,3 +118,5 @@ int checkInterrupt( std::string uInput )
     // if there was no interrupt, then keep the game running
     return 1;
 }
+
+////////////////////////////////////////////////////////////////////////////////

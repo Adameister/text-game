@@ -8,19 +8,17 @@
 class Player : public Entity
 {
     private:
-        std::string playerName ; // FIXME - the super class already has a name
-        std::string playerLocation ; // FIXME - this is not the correct concept
+        // Private data members
 
     public:
         // Constructor
-        Player() ;
+        Player( std::string& name, Position& position ) ;
 
         // Member functions
-        void createPlayer( std::string name ) ;
-        void setPlayerLocation( std::string name ) ;
-        std::string getPlayerName( void ) const ;
-        std::string getPlayerLocation( void ) const ;
+
+        void displayStatus() const override ;
+        std::string getPlayerLocation() const ;
 
         // Destructor
         ~Player() ;
-};
+} ;
